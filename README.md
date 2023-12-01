@@ -5,8 +5,8 @@ This is a simple CLI tool that can help you with simple tasks.
 
 ### Linux
 
-    - Download the latest release
-    - Execute the install_linux.sh file with sudo permissions  ```$ ./install_linux.sh```
+- Download the latest release
+- Execute the install_linux.sh file with sudo permissions  ```$ ./install_linux.sh```
 
 ## Running it
 
