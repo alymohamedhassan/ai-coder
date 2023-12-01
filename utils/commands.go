@@ -34,8 +34,9 @@ func SaveFile(name string, fileType string, content string) {
   }
 }
 
-func RunCmd(command string) {
+func RunCmd(command string, directory string) {
   cmd := exec.Command("bash", "-c", command)
+  cmd.Dir = directory
   cmd.Stdin = os.Stdin
   cmd.Stdout = os.Stdout
   cmd.Stderr = os.Stderr

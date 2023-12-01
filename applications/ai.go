@@ -80,7 +80,7 @@ func runCodeInTerminal(scanner bufio.Scanner, code string) {
         continue
       }
       fmt.Println("Agent >", value)
-      utils.RunCmd(value)
+      utils.RunCmd(value, "./")
     }
   }
 }

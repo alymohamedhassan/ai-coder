@@ -35,5 +35,5 @@ func RunScriptsApplication(args []string) {
       command = v.Command
     }
   }
-  utils.RunCmd(command)
+  utils.RunCmd(command, "./")
 }

@@ -38,8 +38,10 @@ func initializeProject(name string) {
     }
   }
 
+  projectDirectory := utils.LoadContext().PROJECT_DIRECTORY
+
   fmt.Println(">", command)
-  utils.RunCmd(command)
+  utils.RunCmd(command, projectDirectory)
 }
 
 func createProject() {
@@ -99,7 +101,7 @@ func ListProjects() {
   utils.DynamicMenu(options, "Confirm")
 
   if utils.StartMenuChoice == "Yes" {
-    utils.RunCmd(fmt.Sprintf("nvim %s", selectedProjectPath))
+    utils.RunCmd(fmt.Sprintf("nvim %s", selectedProjectPath), selectedProjectPath)
   }
 }
 
