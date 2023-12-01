@@ -61,8 +61,14 @@ func Setup(scanner *bufio.Scanner) {
   if !isSetup {
     projectDir := setupProjectDirectory(scanner)
 
+    var apiKey string
+    fmt.Print("Palm 2 Api Key: ")
+    for scanner.Scan() {
+      apiKey = scanner.Text()
+      break
+    }
     configurations := ConfigType{
-      API_KEY: "AIzaSyBi2LGmRB-ZOCNlZ13URits-GTm1EdCC_E",
+      API_KEY: apiKey,
       PROJECT_DIRECTORY: projectDir,
       Frameworks: []Framework{
         {Name: "NestJs", Command: "nest new {project_name}"},
