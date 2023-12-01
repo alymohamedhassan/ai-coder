@@ -8,7 +8,6 @@ import (
 	"strings"
 
 	"ai-coder/utils"
-
 	"github.com/charmbracelet/bubbles/list"
 )
 
