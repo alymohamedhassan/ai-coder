@@ -32,6 +32,7 @@ There are 2 applications:-
     - Projects
     - Scripts
 
+
 ## Applications
 ### AI Assistant
 
@@ -71,6 +72,7 @@ Do you want to execute this code or save it? r (Run) / s (Save) / c (Copy) / q (
 
 Hint:- If you want to save it to a project, you can do that under the (Save) option.
 
+
 ### Projects
 This application allows you to open or create new Projects.
 
@@ -81,6 +83,7 @@ This application allows you to create or open a project directly from the tool.
 It has two options:
   1. ```List Projects```, and these are the list of projects in the directory specified in the configurations
   2. ```New Project```, and this allows you to create a new project and a script to initiate it
+
 
 ### Scripts
 This application allows you to execute scripts that are saved in your configurations.
