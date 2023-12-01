@@ -53,29 +53,7 @@ func createProject() {
     break
   }
 
-  var environment string
-
-  // items := []list.Item{
-  //   utils.Item("New Environment"),
-  // }
-  // entries, _ := os.ReadDir(utils.LoadContext().PROJECT_DIRECTORY)
-
-  // for _, e := range entries {
-  //   items = append(items, utils.Item(e.Name()))
-  // }
-  // utils.DynamicMenu(items)
-
-  // if utils.StartMenuChoice != "New Environment" {
-  //   environment = utils.StartMenuChoice
-  // } else {
-  //   fmt.Print("Enter environment name: ")
-  //   for scanner.Scan() {
-  //     environment = scanner.Text()
-  //     break
-  //   }
-  // }
-
-  projectPath := filepath.Join(utils.LoadContext().PROJECT_DIRECTORY, environment, projectName)
+  projectPath := filepath.Join(utils.LoadContext().PROJECT_DIRECTORY, projectName)
   
   fmt.Println("Project Path:", projectPath)
 
@@ -101,7 +79,8 @@ func ListProjects() {
   utils.DynamicMenu(options, "Confirm")
 
   if utils.StartMenuChoice == "Yes" {
-    utils.RunCmd(fmt.Sprintf("nvim %s", selectedProjectPath), selectedProjectPath)
+    fmt.Println("Path:", filepath.Join(utils.LoadContext().PROJECT_DIRECTORY, selectedProjectPath))
+    utils.RunCmd(fmt.Sprintf("nvim %s", selectedProjectPath), filepath.Join(utils.LoadContext().PROJECT_DIRECTORY, selectedProjectPath))
   }
 }
 

@@ -75,18 +75,11 @@ func CreateConfigFile(path string, fileName string, configurations ConfigType) {
   }
 
   // Marshal the struct to JSON
-  jsonBytes, err := json.Marshal(configurations)
-  if err != nil {
-    fmt.Println("Error marshaling JSON:", err)
-    return
-  }
-
-	fmt.Println(configurations)
-	fmt.Println(string(jsonBytes))
+  indented, err := json.MarshalIndent(configurations, "", "    ")
 
   defer f.Close()
 
-  _, err = f.WriteString(string(jsonBytes))
+  _, err = f.WriteString(string(indented))
   if err != nil {
     fmt.Println("Error writing to file:", err)
     return

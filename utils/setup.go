@@ -50,7 +50,7 @@ func GetConfigFilePath() (string, string) {
   if runtime.GOOS == "windows" {
     path = "C:\\ai-coder\\"
   } else {
-    path = "/usr/ai-coder"
+    path = "/etc"
   }
 
   return path, fileName
@@ -77,7 +77,6 @@ func Setup(scanner *bufio.Scanner) {
         {Name: "Django", Command: "django-admin startproject {project_name}"},
       },
     }
-    fmt.Println("configurations:", configurations)
     CreateConfigFile(configDirectoryPath, "c.conf", configurations)
   } else {
     fmt.Println("You already setup your application")
