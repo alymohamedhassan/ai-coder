@@ -14,7 +14,6 @@ import (
 
 func LoadProjectFrameworks() []utils.Framework {
   configurations := utils.LoadContext().Frameworks
-  fmt.Println("Configs:", configurations)
   return configurations
 }
 
@@ -114,7 +113,6 @@ func RunProjectsApplication(args []string) {
     }
     utils.DynamicMenu(items, "Select Option")
   }
-  fmt.Println("Selected:", utils.StartMenuChoice)
 
   selected := utils.StartMenuChoice
 
