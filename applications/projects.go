@@ -5,8 +5,10 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"ai-coder/utils"
+
 	"github.com/charmbracelet/bubbles/list"
 )
 
@@ -16,8 +18,8 @@ func LoadProjectFrameworks() []utils.Framework {
   return configurations
 }
 
-func initializeProject() {
-  fmt.Println("Initializing Project")
+func initializeProject(name string) {
+  fmt.Println(fmt.Sprintf("Initializing Project: %s", name))
 
   projects := []list.Item{}
 
@@ -33,10 +35,11 @@ func initializeProject() {
   
   for _, v := range LoadProjectFrameworks() {
     if selected == v.Name {
-      command = v.Command
+      command = strings.Replace(v.Command, "{project_name}", name, 1)
     }
   }
 
+  fmt.Println(">", command)
   utils.RunCmd(command)
 }
 
@@ -75,7 +78,7 @@ func createProject() {
   
   fmt.Println("Project Path:", projectPath)
 
-  initializeProject()
+  initializeProject(projectName)
 }
 
 func ListProjects() {
