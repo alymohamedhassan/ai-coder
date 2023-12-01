@@ -79,3 +79,9 @@ It has two options:
   1. ```List Projects```, and these are the list of projects in the directory specified in the configurations
   2. ```New Project```, and this allows you to create a new project and a script to initiate it
 
+### Configuration
+##### Shortcut
+```$ aicoder c```
+
+This allows you to change tool configurations.
+For now, there is only one, which is adding project frameworks installer. A project framework installer is a script that you use to create a new project by a specific framework, Django for example. 
