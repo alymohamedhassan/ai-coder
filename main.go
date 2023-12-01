@@ -19,6 +19,10 @@ func main() {
     if argument == "setup" {
       utils.StartMenuChoice = "Setup"
     } else 
+    if argument == "s" || argument == "scripts" {
+      utils.StartMenuChoice = "Scripts"
+      fmt.Println("Module", utils.StartMenuChoice)
+    } else 
     if argument == "ai" {
       utils.StartMenuChoice = "AI Assistant"
       fmt.Println("Module", utils.StartMenuChoice)
@@ -47,6 +51,11 @@ func main() {
   if utils.StartMenuChoice == "Configurations" {
     if len(args) == 0 { args = append(args, "c")}
     applications.RunConfigurationApplication(args)
+  } else
+
+  if utils.StartMenuChoice == "Scripts" {
+    if len(args) == 0 { args = append(args, "s")}
+    applications.RunScriptsApplication(args)
   } else
 
   if utils.StartMenuChoice == "Setup" {

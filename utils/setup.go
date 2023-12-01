@@ -10,7 +10,8 @@ import (
 )
 
 func LoadContext() ConfigType {
-  configurations, _ := os.ReadFile("/usr/ai-coder/c.conf")
+  path, filename := GetConfigFilePath()
+  configurations, _ := os.ReadFile(filepath.Join(path, filename))
   
   var object ConfigType
   err := json.Unmarshal(configurations, &object)
@@ -23,6 +24,7 @@ func LoadContext() ConfigType {
     API_KEY: object.API_KEY,
     PROJECT_DIRECTORY: object.PROJECT_DIRECTORY,
     Frameworks: object.Frameworks,
+    Scripts: object.Scripts,
   }
 }
 
