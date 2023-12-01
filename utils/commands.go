@@ -47,10 +47,16 @@ type Framework struct {
   Command string
 }
 
+type Script struct {
+  Name string
+  Command string
+}
+
 type ConfigType struct {
   API_KEY string
   PROJECT_DIRECTORY string 
   Frameworks []Framework
+  Scripts []Script
 }
 
 func CreateConfigFile(path string, fileName string, configurations ConfigType) {

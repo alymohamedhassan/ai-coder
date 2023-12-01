@@ -1,13 +1,15 @@
 package utils
 
 import (
-  "fmt"
-  "io"
-  "os"
-  "strings"
+	"fmt"
+	"io"
+	"os"
+	"path/filepath"
+	"strings"
+
 	"github.com/charmbracelet/bubbles/list"
-  "github.com/charmbracelet/lipgloss"
 	tea "github.com/charmbracelet/bubbletea"
+	"github.com/charmbracelet/lipgloss"
 )
 
 var StartMenuChoice string
@@ -17,7 +19,7 @@ const listHeight = 14
 var (
 	titleStyle        = lipgloss.NewStyle().MarginLeft(2)
 	itemStyle         = lipgloss.NewStyle().PaddingLeft(4)
-	selectedItemStyle = lipgloss.NewStyle().PaddingLeft(2).Foreground(lipgloss.Color("170"))
+	selectedItemStyle = lipgloss.NewStyle().PaddingLeft(2).Foreground(lipgloss.Color("12"))
 	paginationStyle   = list.DefaultStyles().PaginationStyle.PaddingLeft(4)
 	helpStyle         = list.DefaultStyles().HelpStyle.PaddingLeft(4).PaddingBottom(1)
 	quitTextStyle     = lipgloss.NewStyle().Margin(1, 0, 2, 4)
@@ -119,12 +121,20 @@ func DynamicMenu(items []list.Item, title string) {
 }
 
 func StartMenu() {
-	items := []list.Item{
-		Item("AI Assistant"),
-    Item("Projects"),
-    Item("Setup"),
-    Item("Configurations"),
-	}
+	var items []list.Item
+  configDirectoryPath, filename := GetConfigFilePath()
+  if IsSetup(filepath.Join(configDirectoryPath, filename)) {
+    items = []list.Item{
+      Item("AI Assistant"),
+      Item("Projects"),
+      Item("Configurations"),
+      Item("Scripts"),
+   }
+  } else {
+    items = []list.Item{
+      Item("Setup"),
+    }
+  }
 
   DynamicMenu(items, "Select Module")
 }
