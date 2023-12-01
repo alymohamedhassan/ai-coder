@@ -7,7 +7,11 @@ This is a simple CLI tool that can help you with simple tasks.
 
 - Download the latest release
 - Execute the install_linux.sh file with sudo permissions  ```$ sudo ./install_linux.sh```
--     This will automatically download the binary from github and install it on your /usr/local/bin directory.
+  - This will automatically download the binary from github and install it on your /usr/local/bin directory.
+
+### Windows
+- Download the latest windows release
+- Add the binary to your path in you environmental variables
 
 ## Running it
 
