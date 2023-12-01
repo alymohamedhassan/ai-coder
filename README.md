@@ -26,18 +26,19 @@ As soon as you get the installation ready run ```$ aicoder setup ``` or ```$ aic
 
 ```$ aicoder```
 
-There are 2 modules:-
+There are 2 applications:-
 
-    - AI Assistant Module
-    - Projects Module
+    - AI Assistant
+    - Projects
+    - Scripts
 
-## Modules
+## Applications
 ### AI Assistant
 
 ##### Shortcut
 ```$ aicoder ai```
 
-This module allows you to communicate with an LLM and if the response had some code, it will opt you to either, (save it, run it, or copy it).
+This application allows you to communicate with an LLM and if the response had some code, it will opt you to either, (save it, run it, or copy it).
 
 1- A Text Input will show with the title ```Prompt > ```, and this is to allow you to enter your own prompt.
   
@@ -70,15 +71,23 @@ Do you want to execute this code or save it? r (Run) / s (Save) / c (Copy) / q (
 
 Hint:- If you want to save it to a project, you can do that under the (Save) option.
 
-### Projects Module
+### Projects
+This application allows you to open or create new Projects.
 
 ##### Shortcut
 ```$ aicoder p```
 
-This module allows you to create or open a project directly from the tool. 
+This application allows you to create or open a project directly from the tool. 
 It has two options:
   1. ```List Projects```, and these are the list of projects in the directory specified in the configurations
   2. ```New Project```, and this allows you to create a new project and a script to initiate it
+
+### Scripts
+This application allows you to execute scripts that are saved in your configurations.
+
+##### Shortcut
+```$ aicoder s```
+
 
 ### Configuration
 ##### Shortcut
