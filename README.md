@@ -95,3 +95,5 @@ This application allows you to execute scripts that are saved in your configurat
 
 This allows you to change tool configurations.
 For now, there is only one, which is adding project frameworks installer. A project framework installer is a script that you use to create a new project by a specific framework, Django for example. 
+
+
