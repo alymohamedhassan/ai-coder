@@ -6,6 +6,7 @@ This is a simple CLI tool that can help you with simple tasks.
 ```$ aicoder```
 
 There are 2 modules:-
+
     - AI Assistant Module
     - Projects Module
 
