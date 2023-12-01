@@ -53,7 +53,7 @@ func createProject() {
   }
 
   projectPath := filepath.Join(utils.LoadContext().PROJECT_DIRECTORY, projectName)
-  
+
   fmt.Println("Project Path:", projectPath)
 
   initializeProject(projectName)
