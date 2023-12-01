@@ -13,6 +13,14 @@ This is a simple CLI tool that can help you with simple tasks.
 - Download the latest windows release
 - Add the binary to your path in you environmental variables
 
+## Setup
+For the first time, you will need to setup the tool with some configurations.
+As soon as you get the installation ready run ```$ aicoder setup ``` or ```$ aicoder``` and select Setup
+
+1. This will ask you to enter the path of the directory you want to store your projects in.
+2. This tool's AI Assistant depends on Google Palm 2 API, create an API Key and insert it.
+  - To create an API Key <a href="https://makersuite.google.com/app/">https://makersuite.google.com/app/</a>
+
 ## Running it
 
 ```$ aicoder```
