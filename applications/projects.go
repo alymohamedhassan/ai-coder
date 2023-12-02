@@ -19,7 +19,9 @@ func LoadProjectFrameworks() []utils.Framework {
 func initializeProject(name string) {
   fmt.Println(fmt.Sprintf("Initializing Project: %s", name))
 
-  projects := []list.Item{}
+  projects := []list.Item{
+    utils.Item("Empty"),
+  }
 
   for _, v := range LoadProjectFrameworks() {
     projects = append(projects, utils.Item(v.Name))
@@ -29,6 +31,12 @@ func initializeProject(name string) {
 
   selected := utils.StartMenuChoice
 
+  projectDirectory := utils.LoadContext().PROJECT_DIRECTORY
+
+  if selected == "Empty" {
+    utils.RunCmd(fmt.Sprintf("mkdir %s", filepath.Join(projectDirectory, name)), projectDirectory)
+  }
+
   var command string
   
   for _, v := range LoadProjectFrameworks() {
@@ -36,8 +44,6 @@ func initializeProject(name string) {
       command = strings.Replace(v.Command, "{project_name}", name, 1)
     }
   }
-
-  projectDirectory := utils.LoadContext().PROJECT_DIRECTORY
 
   fmt.Println(">", command)
   utils.RunCmd(command, projectDirectory)
