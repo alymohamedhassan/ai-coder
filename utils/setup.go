@@ -45,7 +45,7 @@ func IsSetup(path string) bool {
 
 func GetConfigFilePath() (string, string) {
   var path string
-  fileName := "c.conf"
+  fileName := "aicoder.conf"
 
   if runtime.GOOS == "windows" {
     path = "C:\\ai-coder\\"
