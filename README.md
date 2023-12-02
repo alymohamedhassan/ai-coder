@@ -1,4 +1,4 @@
-# ai-coder
+# AI Coder
 This is a simple CLI tool that can help you with simple developer tasks, like creating projects with frameworks, opening the project directly from terminal, getting code snippets. 
 ```$ aicoder```
 
