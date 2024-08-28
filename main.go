@@ -3,10 +3,9 @@ package main
 import (
 	"fmt"
 	"os"
-  "bufio"
-
+  	"bufio"
 	"ai-coder/utils"
-  "ai-coder/applications"
+	"ai-coder/applications"
 )
 
 func main() {
